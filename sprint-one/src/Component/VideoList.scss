@@ -1,0 +1,35 @@
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1440px;
+$mobile-breakpoint-min: 320px;
+$mobile-breakpoint-max: 767px;
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint-min) {
+    @content;
+  }
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    @content;
+  }
+}
+
+.video__list {
+  margin: 2.5rem 1rem 2.5rem 1rem;
+  @include desktop {
+    margin: 0rem 11.25rem 2.5rem 2rem;
+  }
+  &--title {
+    margin: 2.5rem 0 2.5rem 0;
+    @include desktop {
+      margin: 0rem 0 2.5rem 0;
+    }
+  }
+}

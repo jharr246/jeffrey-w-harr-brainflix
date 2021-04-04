@@ -1,0 +1,190 @@
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1440px;
+$mobile-breakpoint-min: 320px;
+$mobile-breakpoint-max: 767px;
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint-min) {
+    @content;
+  }
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    @content;
+  }
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Fonts/AvenirNextProLT/LinotypeAvenirNextLTProRegular.otf")
+    format(otf);
+}
+// @font-face {
+//   font-family: "AvenirBold";
+//   src: url("/sprint-one/src/assets/Fonts/AvenirNextProLT/LinotypeAvenirNextLTProBold.otf")
+//     format(otf);
+// }
+// @font-face {
+//   font-family: "AvenirDemiBold";
+//   src: url("/sprint-one/src/assets/Fonts/AvenirNextProLT/LinotypeAvenirNextLTProDemi.otf")
+//     format(otf);
+// }
+* {
+  font-family: Avenir, open sans;
+}
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__page {
+    padding: 0 1rem 0 1rem;
+    border-top: 0.1rem solid #e1e1e1;
+    @include desktop {
+      padding: 0 11.25rem 0 11.25rem;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+  &__img {
+    width: 18rem;
+    height: 9.56rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0 2rem 0;
+    @include tablet {
+      width: 21.5rem;
+      height: 11.4375rem;
+      margin: 0.5rem 0 2.5rem 0;
+    }
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    color: #afafaf;
+    font-weight: bold;
+    font-size: 0.75rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__heading {
+    margin: 1.5rem 0 2rem 0;
+    @include tablet {
+      font-size: 2.25rem;
+      padding: 0 0 2rem 0;
+      border-bottom: 0.15rem solid #e1e1e1;
+      margin: 3rem 0 2.5rem 0;
+    }
+  }
+  &__title {
+    margin: 0.5rem 0 1.5rem 0;
+    width: 18rem;
+    height: 3rem;
+    background-color: #fafafa;
+    border: 0.15rem solid #e1e1e1;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+    @include tablet {
+      width: 46rem;
+    }
+    @include desktop {
+      width: 44.5rem;
+    }
+    &::placeholder {
+      color: black;
+    }
+    &:focus {
+      outline: none;
+      border: 0.15rem solid #0095ff;
+    }
+  }
+  &__description {
+    margin: 0.5rem 0 2rem 0;
+    width: 18rem;
+    height: 8.93rem;
+    border: 0.15rem solid #e1e1e1;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+
+    @include tablet {
+      margin: 0.5rem 0 2.5rem 0;
+      width: 46rem;
+    }
+    @include desktop {
+      height: 5.45rem;
+      width: 44.5rem;
+    }
+    &::placeholder {
+      color: black;
+    }
+    &:focus {
+      outline: none;
+      border: 0.15rem solid #0095ff;
+    }
+  }
+  &__publish {
+    width: 18rem;
+    height: 3rem;
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    border: solid #0095ff;
+    border-radius: 0.25rem;
+    color: white;
+    background-color: #0095ff;
+    font-weight: bold;
+    @include tablet {
+      width: 10rem;
+    }
+  }
+  &__cancel {
+    padding: 0rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: #0095ff;
+    &--center {
+      display: flex;
+      width: 18rem;
+      justify-content: center;
+      margin: 0 0 2rem 0;
+      @include tablet {
+        width: 10rem;
+      }
+    }
+  }
+  &__buttons {
+    @include tablet {
+      width: 46rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      padding: 2.5rem 0 0 0;
+      border-top: 0.15rem solid #e1e1e1;
+    }
+    @include desktop {
+      width: 67.5rem;
+    }
+  }
+}
+.form__desktop {
+  @include desktop {
+    display: flex;
+  }
+}
+.text__container {
+  @include desktop {
+    margin: 0 0 0 1.5rem;
+  }
+}

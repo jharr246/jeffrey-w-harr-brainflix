@@ -1,0 +1,88 @@
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1440px;
+$mobile-breakpoint-min: 320px;
+$mobile-breakpoint-max: 767px;
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint-min) {
+    @content;
+  }
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    @content;
+  }
+}
+
+.video {
+  &__img {
+    height: 11.44rem;
+    width: 100%;
+    margin: 0 0 2rem 0;
+    background-color: black;
+    @include tablet {
+      height: 25rem;
+      width: 100%;
+      margin: 0 0 3rem 0;
+    }
+    @include desktop {
+      height: 33.75rem;
+    }
+  }
+  &__current-title {
+    margin: 0 1rem 1rem 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    @include desktop {
+      margin: 0 11.25rem 1rem 11.25rem;
+    }
+  }
+  &__current-channel {
+    font-weight: bold;
+    margin: 0 0.5rem 0 0;
+
+    &--container {
+      display: flex;
+      align-items: flex-start;
+      margin: 0 1rem 2rem 1rem;
+      @include desktop {
+        margin: 0 0rem 1rem 11.25rem;
+      }
+    }
+  }
+  &__date {
+    margin: 0;
+  }
+  &__data {
+    display: flex;
+    margin: 0 1rem 0 1rem;
+    padding: 0 0 1.5rem 0;
+    border-bottom: 0.15rem solid #e1e1e1;
+    @include desktop {
+      margin: 0 0rem 1rem 11.25rem;
+    }
+  }
+  &__views {
+    margin: 0 2rem 0 0.5rem;
+  }
+  &__likes {
+    margin: 0 0rem 0 0.5rem;
+  }
+  &__description {
+    margin: 1.5rem 1rem 0rem 1rem;
+    line-height: 1.5rem;
+    @include tablet {
+      line-height: 2rem;
+      @include desktop {
+        margin: 0 11.25rem 1rem 11.25rem;
+      }
+    }
+  }
+}

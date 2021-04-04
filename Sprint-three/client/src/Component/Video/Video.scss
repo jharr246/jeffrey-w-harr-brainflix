@@ -1,0 +1,56 @@
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1440px;
+$mobile-breakpoint-min: 320px;
+$mobile-breakpoint-max: 767px;
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint-min) {
+    @content;
+  }
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    @content;
+  }
+}
+
+.video {
+  display: flex;
+  margin: 0 1rem 0 0;
+  @include tablet {
+    justify-content: inherit;
+  }
+
+  &__image {
+    height: 4.375rem;
+    width: 7.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.25rem;
+    margin: 0 1rem 1.5rem 0;
+  }
+  &__title {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    width: 9.5rem;
+  }
+  &__channel {
+    font-size: 0.875rem;
+  }
+}
