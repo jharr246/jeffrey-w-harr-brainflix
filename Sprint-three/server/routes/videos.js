@@ -7,10 +7,11 @@ const videoList = require(videoData);
 const { v4: uuidv4 } = require("uuid");
 const coolImages = require("cool-images");
 router.use(express.json());
+const path = require("path");
 
 router.get("/", (req, res) => {
   fs.readFile(
-    "/Users/jeffharr/Desktop/jeffrey-harr-brainflix/Sprint-three/server/data/video-details.json",
+    path.resolve("./data/video-details.json"),
     "utf8",
     (err, data) => {
       if (err) console.log(err);
@@ -24,7 +25,7 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
 
   fs.readFile(
-    "/Users/jeffharr/Desktop/jeffrey-harr-brainflix/Sprint-three/server/data/video-details.json",
+    path.resolve("./data/video-details.json"),
     "utf8",
     (err, data) => {
       let videoDetails = JSON.parse(data);
